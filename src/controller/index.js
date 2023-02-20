@@ -6,7 +6,7 @@ const openai = new OpenAIApi(configuration);
 
 const generateImages = async (text) => {
   const response = await openai.createImage({
-    prompt: `A wet on wet oil painting of ${text} by Bob Ross.`,
+    prompt: `${text}`,
     n: 1,
     size: "1024x1024",
   });

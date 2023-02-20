@@ -15,7 +15,17 @@ api.route("/generate-image").post(async (req, res, next) => {
 
 api.route("/generate-image-fake").post(async (req, res, next) => {
   try {
-    const data = process.env.DUMB_IMAGE;
+    const url = process.env.DUMB_IMAGE;
+    const data = {
+      data: {
+        created: new Date(),
+        data: [
+          {
+            url,
+          },
+        ],
+      },
+    };
     res.status(StatusCodes.OK).json({ data });
   } catch (error) {
     next(error);
