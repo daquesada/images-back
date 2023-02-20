@@ -26,7 +26,7 @@ api.route("/generate-image-fake").post(async (req, res, next) => {
         ],
       },
     };
-    res.status(StatusCodes.OK).json({ data });
+    res.status(StatusCodes.OK).json(data);
   } catch (error) {
     next(error);
   }
